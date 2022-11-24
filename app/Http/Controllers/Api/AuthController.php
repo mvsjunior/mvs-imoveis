@@ -9,6 +9,7 @@ class AuthController extends Controller
 {
     const HTTP_CODE_UNAUTHORIZED = 401;
     const HTTP_CODE_SUCCESS      = 200;
+    const AUTHENTICATION_FAILURE = FALSE;
 
     /**
      * Create a new AuthController instance.
@@ -33,7 +34,7 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
         $token       = auth()->attempt($credentials);
 
-        if (!$token)
+        if ($token === self::AUTHENTICATION_FAILURE)
         {
             $execResult['error']   = true;
             $execResult['message'] = "Acesso não autorizado";

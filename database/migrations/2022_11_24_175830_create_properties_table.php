@@ -18,13 +18,8 @@ return new class extends Migration
             $table->string('title')
                   ->nullable();
             $table->string('description')
-                  ->nullable();
-            $table->foreignId('property_type_id')
-                  ->references('id')
-                  ->on('property_types')
                   ->nullable()
-                  ->onDelete('cascade');
-            $table->string('type');
+                  ->default("");
             $table->string('addr_cep')
                   ->nullable();
             $table->string('addr_number')

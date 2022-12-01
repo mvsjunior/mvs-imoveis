@@ -16,7 +16,11 @@
             <h5>Imóveis Cadastrados</h5>
             </div>
             <div class="card-body">
-            <h4>{{$viewModel->getNumTotalProperties() . " Imóveis"}}</h4>
+            @if($viewModel->getNumPropertiesRented() === 1)
+                <h4>{{$viewModel->getNumTotalProperties() . " Imóvel"}}</h4>
+            @else
+                <h4>{{$viewModel->getNumTotalProperties() . " Imóveis"}}</h4>
+            @endif
             </div>
         </div> {{-- Card - Totais imóveis #end --}}
 
@@ -31,7 +35,11 @@
                 <h5>Imóveis Alugados</h5>
             </div>
             <div class="card-body">
-                <h4>{{$viewModel->getNumPropertiesRented() . " Imóveis" }}</h4>
+                @if($viewModel->getNumPropertiesRented() === 1)
+                    <h4>{{$viewModel->getNumPropertiesRented() . " Imóvel" }}</h4>
+                @else
+                    <h4>{{$viewModel->getNumPropertiesRented() . " Imóveis" }}</h4>
+                @endif
             </div>
         </div> {{-- Card - imóveis disponíveis #end --}}
 
@@ -46,7 +54,11 @@
                 <h5>Disponíveis p/ Alugar</h5>
             </div>
             <div class="card-body">
-                <h4>{{$viewModel->getNumPropertiesNotRented() . " Imóveis"}} </h4>
+                @if($viewModel->getNumPropertiesNotRented() === 1)
+                    <h4>{{$viewModel->getNumPropertiesNotRented() . " Imóvel"}} </h4>
+                @else
+                    <h4>{{$viewModel->getNumPropertiesNotRented() . " Imóveis"}} </h4>
+                @endif
             </div>
         </div> {{-- Card - imóveis disponíveis para alugar #end --}}
     </div> {{-- .dashboard-cards #end --}}

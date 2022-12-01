@@ -21,18 +21,26 @@
 
 }
 
-body div {
-    display: grid;
-}
+
 
 .sidebar {
-    min-height: 100vh;
+    min-height: 95vh;
+    display: grid;
 }
 
-.main {
-    min-height: 100vh;
+.main-content {
+    background-color: #fff;
+    margin: auto;
+    min-height: 95vh;
+}
+
+/* DASHBOARD */
+.dashboard-cards {
+    font-size-adjust: 150% !important;
     display: grid;
-    margin-left: 10px;
+    grid-template-columns: repeat(auto-fit, 290px);
+    justify-content: flex-start;
+    grid-gap: 10pt;
 }
 
 .form-auth {

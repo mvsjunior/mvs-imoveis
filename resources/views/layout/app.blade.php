@@ -70,51 +70,55 @@
 </svg>
 
 <body id="body-admin" class="container-fluid">
-        <div class="sidebar">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-light " style="width: 280px;">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <img width="32" class="me-2" src="http://mvsimoveis.local/img/house.png" alt="">
-                <span class="fs-4">MVS Imóveis</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                  <li>
-                      <a href="#" class="nav-link link-dark">
-                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                        Dashboard
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link link-dark" aria-current="page">
-                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-                        Imóveis
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#" class="nav-link link-dark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
-                          <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
-                        </svg>
-                        Usuários
-                      </a>
-                  </li>
-                </ul>
-                <hr>
-                <div class="dropdown">
-                  <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <svg class="bi pe-none ms-2 me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    <strong>{{Auth::user()->name}}</strong>
+    <div class="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light rounded" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img width="32" class="me-2" src="http://mvsimoveis.local/img/house.png" alt="">
+            <span class="fs-4">MVS Imóveis</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li>
+                  <a href={{route("admin.dashboard")}} class="nav-link link-dark">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                    Dashboard
                   </a>
-                  <ul class="dropdown-menu text-small shadow">
-                      <li><a class="dropdown-item" href="#">Perfil</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href={{route('logout')}}>Sair</a></li>
-                  </ul>
-                </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link link-dark" aria-current="page">
+                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+                    Imóveis
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
+                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
+                    </svg>
+                    Usuários
+                  </a>
+              </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg class="bi pe-none ms-2 me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                <strong>{{Auth::user()->name}}</strong>
+              </a>
+              <ul class="dropdown-menu text-small shadow">
+                  <li><a class="dropdown-item" href="#">Perfil</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href={{route('logout')}}>Sair</a></li>
+              </ul>
             </div>
         </div>
-    <div class="main" >
-        @yield('main')
+    </div>
+    <div class="container-fluid" >
+      <div class="row">
+        <div class="col-11 rounded main-content">
+          @yield('main')
+        </div>
+      </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

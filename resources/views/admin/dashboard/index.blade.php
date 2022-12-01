@@ -1,5 +1,6 @@
 @extends('layout.app')
 
+@inject('viewModel', '\App\ViewModels\DashboardViewModel')
 @section('main')
     <h1 class="p-2"><svg class="bi pe-none" width="32" height="32"><use xlink:href="#speedometer2"/></svg> Dashboard</h1>
         <hr>
@@ -15,7 +16,7 @@
             <h5>Imóveis Cadastrados</h5>
             </div>
             <div class="card-body">
-            <h4>54 Imóveis</h4>
+            <h4>{{$viewModel->getNumTotalProperties() . " Imóveis"}}</h4>
             </div>
         </div> {{-- Card - Totais imóveis #end --}}
 
@@ -30,7 +31,7 @@
                 <h5>Imóveis Alugados</h5>
             </div>
             <div class="card-body">
-                <h4>50 Imóveis</h4>
+                <h4>{{$viewModel->getNumPropertiesRented() . " Imóveis" }}</h4>
             </div>
         </div> {{-- Card - imóveis disponíveis #end --}}
 
@@ -45,7 +46,7 @@
                 <h5>Disponíveis p/ Alugar</h5>
             </div>
             <div class="card-body">
-                <h4>4 Imóveis</h4>
+                <h4>{{$viewModel->getNumPropertiesNotRented() . " Imóveis"}} </h4>
             </div>
         </div> {{-- Card - imóveis disponíveis para alugar #end --}}
     </div> {{-- .dashboard-cards #end --}}

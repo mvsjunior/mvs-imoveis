@@ -13,4 +13,9 @@ class AdminController extends Controller
     {
         return view('admin.dashboard.index');
     }
+
+    public function properties()
+    {
+        return view('admin.properties.index');
+    }
 }

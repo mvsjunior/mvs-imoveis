@@ -30,4 +30,5 @@ Route::group(['prefix' => 'auth'], function() {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/properties', [AdminController::class, 'properties'])->name('admin.properties');
 } );

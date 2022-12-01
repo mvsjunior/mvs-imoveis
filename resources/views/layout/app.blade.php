@@ -85,7 +85,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link link-dark" aria-current="page">
+                  <a href={{route('admin.properties')}} class="nav-link link-dark" aria-current="page">
                     <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
                     Imóveis
                   </a>

@@ -26,8 +26,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 |--------------------------------------------------------------------------
 */
 Route::group([ 'middleware' => 'api', 'prefix' => 'auth' ], function ($router) {
-    Route::post('login',   [AuthController::class, 'login'])->name('login');
-    Route::get('login',    [AuthController::class, 'login'])->name('login');
+    Route::post('login',   [AuthController::class, 'login'])->name('api.login');
+    Route::get('login',    [AuthController::class, 'login'])->name('api.login');
     Route::post('logout',  [AuthController::class, 'logout'])->name('api.logout');
     Route::post('refresh', [AuthController::class, 'refresh'])->name('api.auth-refresh');
     Route::post('me',      [AuthController::class, 'me'])->name('api.auth-me');
